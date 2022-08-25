@@ -1,7 +1,7 @@
 # audiovisual-moments-in-time
 
-The ratings are recorded in participant_ratings.csv. Each row corresponds to a video rating. As each video was 
-rated 3 times, each video has 3 separate rows, distributed throughout the file. Each row contains:
+The raw ratings are recorded in raw_video_ratings.csv. Each row corresponds to a video rating. As each video 
+was rated 3 times, each video has 3 separate rows, distributed throughout the file. Each row contains:
 
 | Field          | Description                                     |
 | -------------- |:-----------------------------------------------:|
