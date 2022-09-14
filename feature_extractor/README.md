@@ -1,7 +1,8 @@
 # Feature Extractor
 
-This directory contains the code to extract audiovisual CNN embeddings from the videos annotated 
-in this work, listed in video_ratings.csv.
+This directory contains the code (extract_features.py) to extract audiovisual CNN embeddings from the videos annotated 
+in this work, listed in video_ratings.csv. We also provide read_tfrecords.py as an example of how to read in and parse 
+the tfrecords so that users can get started quickly.
 
 # Dependencies
 
@@ -20,7 +21,7 @@ Python 3.7.9
 
 # Usage
 
-Run the code from the terminal or Anaconda prompt and provide required filepaths and choice of CNN model. 
+Run extract_features.py from the terminal or Anaconda prompt and provide required filepaths and choice of CNN model. 
 `-repo_dir` is the location of this repo on your local 
 machine, `-MIT_dir` is the location of the unzipped Moments in Time dataset, `-tfrecord_dir` is the 
 desired location for the tfrecord set to be saved (you should create an empty folder first), 
