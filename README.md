@@ -1,18 +1,26 @@
-# Rating data and feature extractor code for "Audiovisual Moments in Time: A Large-Scale Annotated Dataset of Audiovisual Actions"
+# "Audiovisual Moments in Time: A Large-Scale Annotated Dataset of Audiovisual Actions"
 
-This repository contains the built-on data for the Moments in Time dataset (Monfort et al., 2019), available here: http://moments.csail.mit.edu/, collected as described in LINK TO NAT SCI DATA PAPER.
+This repository contains code corresponding to https://arxiv.org/abs/2308.09685. Feature embeddings can be found at https://zenodo.org/record/8253350.
 
-The core idea of the work is to provide a video dataset of audiovisual action events, with controlled levels of audiovisual correspondence. In particular, we provide 3 independent participant ratings for 
-57,210 videos and further identify a highly controlled audiovisual test set of 960 videos across 16 action classes, suitable for both DNN and human experimentation.
+Feature extractor code (used to produce the embeddings) and example code to show how to read the embeddings can be found alongside instructions in feature_embeddings/.
 
-Whilst we provide the filenames of the videos alongside their rating data, we additionally provide ready-made audiovisual embeddings of the videos LINK TO FIGSHARE REPO. There are 2 sets of audiovisual embeddings; those 
+csv files containing annotations and the test set list can be found in this repository (raw_video_ratings.csv, video_ratings.csv and test_set.csv) as well as in our zenodo dataset (https://zenodo.org/record/8253350)
+
+The core idea of the work is to provide a dataset of feature embeddings and audiovisual annotations to train deep neural networks at low computational cost and to be able to carry out controlled experiments in the 
+audiovisual domain (sampling from modality-agnostic action recognition datasets would not give exclusively audiovisual events). We also provide filenames corresponding to annotations should researchers wish to access raw videos 
+from the well-established Moments in Time dataset (MIT; Monfort et al., 2019) which was used in our annotation regime and used to obtain our feature embeddings. To obtain MIT, one needs to visit http://moments.csail.mit.edu/ and 
+fill out a form before access to the dataset is sent via email.
+
+We provide 3 independent participant ratings for 57,177 videos (and embeddings) and further identify a highly controlled audiovisual test set of 960 videos across 16 action classes, suitable for both DNN and human experimentation.
+
+Whilst we provide the filenames of the videos alongside their rating data, we additionally provide ready-made audiovisual embeddings of the videos There are 2 sets of audiovisual embeddings; those 
 obtained using VGGish (Hershey et al., 2017) and VGG16 (Simonyan and Zisserman, 2015) and a second set obtained using YamNet (Plakal and Ellis, 2020) and EfficientNetB0 (Tan and Le, 2019). We provide the 
 code to obtain these embeddings in feature_extractor/extract_features.py. This code can be editted to obtain embeddings using different tensorflow models if you wish (I am also open to requests for 
-the provision of particular embeddings providing that the pretrained models are available via TensorFlow).
+the provision of particular embeddings providing that the pretrained models are available via TensorFlow). The filename:feature-embedding correspondences are found in the csv files described below.
 
 # Data
 
-The raw ratings are recorded in raw_video_ratings.csv. Each row corresponds to a video rating. As each video 
+The raw ratings are recorded in raw_video_ratings.csv. Each row corresponds to a video rating by a single participant. As each video 
 was rated 3 times, each video has 3 separate rows, distributed throughout the file. Each row contains:
 
 | Field          | Description                                     |
@@ -28,27 +36,29 @@ The accumulated ratings are recorded in video_ratings.csv. Each row corresponds 
 all corresponding ratings). Each video was rated 3 times (r1+r2+r3=3). Videos rated less than 3 times were 
 removed. Each row contains:
 
-| Field          | Description                                     |
-| -------------- |:-----------------------------------------------:|
-| filename       | "MIT class subdirectory/ video name"            |
-| r1             | number of '1' ratings given                     |
-| r2             | number of '2' ratings given                     |
-| r3             | number of '3' ratings given                     |
-| AVMIT_label    | as displayed to participants in annotation task |
-| MIT_label      | original dataset label                          |
-| video_location | training or validation directories of MIT       |
-
+| Field            | Description                                                               |
+| ---------------- |:-------------------------------------------------------------------------:|
+| filename         | "MIT class subdirectory/ video name"                                      |
+| r1               | number of '1' ratings given                                               |
+| r2               | number of '2' ratings given                                               |
+| r3               | number of '3' ratings given                                               |
+| AVMIT_label      | as displayed to participants in annotation task                           |
+| MIT_label        | original dataset label                                                    |
+| video_location   | training or validation directories of MIT                                 |
+| tfrecord_filename| subdirectory and filename of corresponding audiovisual feature embeddings |
 
 The held-out test set details are provided in test_set.csv. These video were collected as described in 
-*link to paper*, and are suitable for DNN vs human experiments in the audiovisual domain. Each row contains:
+https://arxiv.org/abs/2308.09685, and are suitable for DNN vs human experiments in the audiovisual domain. 
+Each row contains:
 
-| Field          | Description                                     |
-| -------------- |:-----------------------------------------------:|
-| filename       | "MIT class subdirectory/ video name"            |
-| AVMIT_label    | as displayed to participants in annotation task |
-| MIT_label      | original dataset label                          |
-| video_location | training or validation directories of MIT       |
-| new_filename   | "AVMIT label subdirectory/ new video name"      |
+| Field            | Description                                                               |
+| ---------------- |:-------------------------------------------------------------------------:|
+| filename         | "MIT class subdirectory/ video name"                                      |
+| AVMIT_label      | as displayed to participants in annotation task                           |
+| MIT_label        | original dataset label                                                    |
+| video_location   | training or validation directories of MIT                                 |
+| new_filename     | "AVMIT label subdirectory/ new video name"                                |
+| tfrecord_filename| subdirectory and filename of corresponding audiovisual feature embeddings |
 
 
 # References
