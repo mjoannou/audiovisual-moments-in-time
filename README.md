@@ -2,7 +2,7 @@
 
 This repository contains code corresponding to https://arxiv.org/abs/2308.09685. Feature embeddings can be found at https://zenodo.org/record/8253350.
 
-Feature extractor code (used to produce the embeddings) and example code to show how to read the embeddings can be found alongside instructions in feature_embeddings/.
+Feature extractor code (used to produce the embeddings) and example code to show how to read the embeddings can be found alongside instructions in feature_extractor/.
 
 csv files containing annotations and the test set list can be found in this repository (raw_video_ratings.csv, video_ratings.csv and test_set.csv) as well as in our zenodo dataset (https://zenodo.org/record/8253350)
 
@@ -63,12 +63,12 @@ Each row contains:
 
 # References
 
-Tan, Mingxing and Quoc V. Le (2019). ìEfficientNet: Rethinking model scaling for convolutional neural networksî. In: 36th International Conference on Machine Learning, ICML 2019. Vol. 2019-June, pp. 10691ñ10700. ISBN: 9781510886988.
+Tan, Mingxing and Quoc V. Le (2019). ‚ÄúEfficientNet: Rethinking model scaling for convolutional neural networks‚Äù. In: 36th International Conference on Machine Learning, ICML 2019. Vol. 2019-June, pp. 10691‚Äì10700. ISBN: 9781510886988.
 
-Hershey, Shawn et al. (2017). ìCNN architectures for large-scale audio classificationî. In: IEEE International Conference on Acoustics, Speech and Signal Processing - Proceedings (ICASSP). ISBN: 9781509041176. DOI: 10.1109/ICASSP.2017.7952132.
+Hershey, Shawn et al. (2017). ‚ÄúCNN architectures for large-scale audio classification‚Äù. In: IEEE International Conference on Acoustics, Speech and Signal Processing - Proceedings (ICASSP). ISBN: 9781509041176. DOI: 10.1109/ICASSP.2017.7952132.
 
-Monfort, Mathew et al. (2019). ìMoments in Time Dataset: One Million Videos for Event Understandingî. In: IEEE Transactions on Pattern Analysis and Machine Intelligence 42.2, pp. 502ñ508. DOI: 10.1109/TPAMI.2019.2901464.
+Monfort, Mathew et al. (2019). ‚ÄúMoments in Time Dataset: One Million Videos for Event Understanding‚Äù. In: IEEE Transactions on Pattern Analysis and Machine Intelligence 42.2, pp. 502‚Äì508. DOI: 10.1109/TPAMI.2019.2901464.
 
 Plakal, Manoj and Dan Ellis (2020). YAMNet. URL: https://github.com/tensorflow/models/tree/master/research/audioset/yamnet.
 
-Simonyan, Karen and Andrew Zisserman (Sept. 2015). ìVery Deep Convolutional Networks for Large-Scale Image Recognitionî. In: International Conference of Learning Representations (ICLR). URL: http://arxiv.org/abs/1409.1556.
+Simonyan, Karen and Andrew Zisserman (Sept. 2015). ‚ÄúVery Deep Convolutional Networks for Large-Scale Image Recognition‚Äù. In: International Conference of Learning Representations (ICLR). URL: http://arxiv.org/abs/1409.1556.
