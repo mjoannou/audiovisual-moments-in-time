@@ -1,4 +1,4 @@
-# "Audiovisual Moments in Time: A Large-Scale Annotated Dataset of Audiovisual Actions"
+# Audiovisual Moments in Time: A Large-Scale Annotated Dataset of Audiovisual Actions
 
 This repository contains code corresponding to https://arxiv.org/abs/2308.09685. Feature embeddings can be found at https://zenodo.org/record/8253350.
 
