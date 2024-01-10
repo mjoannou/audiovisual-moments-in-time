@@ -6,10 +6,6 @@ Code to detect whether each video, in AVMIT or MIT-16, has an audio stream.
 
 import pandas as pd
 from pydub import AudioSegment
-import numpy as np
-import resampy
-import sys
-
 
 # %% filepaths
 
