@@ -1,0 +1,51 @@
+# filepaths
+tfrecords_loc1: >-
+  AVMIT_VGGish_VGG16/
+
+tfrecords_loc2: >-
+
+
+congruent_train_csv: "AVMIT_train_cong.csv"
+congruent_val_csv: "AVMIT_val_cong.csv"
+
+incongruent_train_csv: "AVMIT_train_incong.csv"
+incongruent_val_csv: "AVMIT_val_incong.csv"
+
+model_path: &dest "VGGish_VGG16_LSTM_AVMIT_avcorr/"
+
+log_dir: *dest
+
+# RNN function and args
+rnn:
+  function: tf.keras.layers.LSTM
+  units: 256
+  dropout: 0.1
+  unroll: False
+  return_sequences: False
+
+# Multimodal squeeze unit details
+audio: True
+visual: True
+
+# Sample details
+data:
+  VGG_style:
+    enabled: True
+    audio_size: 128
+    visual_size: 512
+    
+  mobilenet_style:
+    enabled: False
+    audio_size: 1024
+    visual_size: 1280
+
+  timesteps: 4 # timesteps to pad to
+
+# Cell containing training arguments
+training:
+  num_epochs: 200
+  learning_rate: 0.0001
+  training_batch_size: 512
+  validation_batch_size: 16
+  test_batch_size: 16
+  buffer_size: 8192 # number of elements to sample from for shuffling

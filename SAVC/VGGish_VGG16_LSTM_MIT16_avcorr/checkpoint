@@ -1,0 +1,2 @@
+model_checkpoint_path: "weights.21-0.78-0.56.ckpt"
+all_model_checkpoint_paths: "weights.21-0.78-0.56.ckpt"
