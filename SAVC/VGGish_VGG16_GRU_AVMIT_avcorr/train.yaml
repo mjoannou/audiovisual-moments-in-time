@@ -11,9 +11,7 @@ congruent_val_csv: "AVMIT_val_cong.csv"
 incongruent_train_csv: "AVMIT_train_incong.csv"
 incongruent_val_csv: "AVMIT_val_incong.csv"
 
-model_path: &dest "VGGish_VGG16_GRU_AVMIT_avcorr/"
-
-log_dir: *dest
+model_path: "VGGish_VGG16_GRU_AVMIT_avcorr/"
 
 # RNN function and args
 rnn:
@@ -23,7 +21,7 @@ rnn:
   unroll: False
   return_sequences: False
 
-# Multimodal squeeze unit details
+# Multimodal details
 audio: True
 visual: True
 
