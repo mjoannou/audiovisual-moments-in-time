@@ -1,0 +1,49 @@
+# filepaths
+tfrecords_loc1: >-
+  MIT16_YamNet_EffNetB0/train/
+
+tfrecords_loc2: >-
+  MIT16_YamNet_EffNetB0/validation/
+
+congruent_train_csv: "MIT16_train_cong.csv"
+congruent_val_csv: "MIT16_val_cong.csv"
+
+incongruent_train_csv: "MIT16_train_incong.csv"
+incongruent_val_csv: "MIT16_val_incong.csv"
+
+model_path: "YamNet_EffNet_GRU_MIT16_avcorr/"
+
+# RNN function and args
+rnn:
+  function: tf.keras.layers.GRU
+  units: 256
+  dropout: 0.1
+  unroll: False
+  return_sequences: False
+
+# Multimodal details
+audio: True
+visual: True
+
+# Sample details
+data:
+  VGG_style:
+    enabled: False
+    audio_size: 128
+    visual_size: 512
+    
+  mobilenet_style:
+    enabled: True
+    audio_size: 1024
+    visual_size: 1280
+
+  timesteps: 7 # timesteps to pad to
+
+# Cell containing training arguments
+training:
+  num_epochs: 200
+  learning_rate: 0.0001
+  training_batch_size: 512
+  validation_batch_size: 16
+  test_batch_size: 16
+  buffer_size: 8192 # number of elements to sample from for shuffling
