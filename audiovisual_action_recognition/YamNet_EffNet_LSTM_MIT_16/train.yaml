@@ -1,0 +1,68 @@
+# filepaths
+tfrecords_loc: >-
+  MIT16_YamNet_EffNetB0/
+
+train_csv: "MIT16_train.csv"
+val_csv: "MIT16_validation.csv"
+
+model_path: &dest "YamNet_EffNetB0_LSTM_MIT_16/"
+
+log_dir: *dest
+
+# RNN function and args
+rnn:
+  function: tf.keras.layers.LSTM
+  units: 64
+  dropout: 0.3
+  unroll: False
+  return_sequences: False
+
+# Multimodal squeeze unit details
+audio: True
+visual: True
+bottleneck_size: 256
+bottleneck_activation: swish
+
+# Sample details
+data:
+  VGG_style:
+    enabled: False
+    audio_size: 128
+    visual_size: 512
+    
+  mobilenet_style:
+    enabled: True
+    audio_size: 1024
+    visual_size: 1280
+
+  timesteps: 7 # timesteps to pad to
+  num_classes: 16
+
+# Cell containing training arguments
+training:
+  num_epochs: 200
+  learning_rate: 0.000041010
+  training_batch_size: 16
+  validation_batch_size: 16
+  test_batch_size: 16
+  early_stopping: 20
+  buffer_size: 5000 # number of elements to sample from for shuffling
+  
+# Can be used to translate for string label to integer
+label_to_int:
+  barking: 0
+  diving: 1
+  drumming: 2
+  frying: 3
+  giggling: 4
+  howling: 5
+  inflating: 6
+  mowing: 7
+  pouring: 8
+  raining: 9
+  sanding: 10
+  shredding: 11
+  sneezing: 12
+  tapping: 13
+  vacuuming: 14
+  whistling: 15
