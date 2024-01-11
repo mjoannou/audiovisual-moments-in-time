@@ -2,10 +2,10 @@
 tfrecords_loc: >-
   MIT16_VGGish_VGG16/
 
-train_csv: "models/MIT16_train.csv"
-val_csv: "models/MIT16_validation.csv"
+train_csv: "MIT16_train.csv"
+val_csv: "MIT16_validation.csv"
 
-model_path: &dest "models/VGGish_VGG16_FRNN_MIT_16/"
+model_path: &dest "VGGish_VGG16_FRNN_MIT_16/"
 
 log_dir: *dest
 
@@ -45,9 +45,8 @@ training:
   training_batch_size: 16
   validation_batch_size: 16
   test_batch_size: 16
-  early_stopping_patience: 20
+  early_stopping: 20
   buffer_size: 5000 # number of elements to sample from for shuffling
-  early_stopping: 16 # early stopping
   
 # Can be used to translate for string label to integer
 label_to_int:
